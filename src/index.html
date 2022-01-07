@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>AngularApp</title>
+  <link rel="stylesheet" href="styles.css">
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -11,6 +12,63 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="mat-typography">
-  <app-root></app-root>
+  <script>
+    alert("Good Day Sir Gregorio Sonit!")
+    alert("===> This is my Final Exam <===")
+  </script>
+
+  <h1 style="font-size: 50px;">Web-based Calculator</h1>
+  
+  <p style="margin:auto;">
+    <input type="text" id="display" value="" disabled><br>
+    <input type="button" value="C" id="reset" onclick="clr('')">
+    <input type="button"value="+" id="op" onclick="a('+')">
+    <input type="button" value="-" id="op" onclick="a('-')">
+    <input type="button" value="×" id="op" onclick="a('*')">
+    <input type="button" value="/" id="op" onclick="a('/')">
+    <input type="button" value="=" id="op" onclick="calc()">
+    <input type="button" value="D" id="delete" onclick="del('')">
+    <br>
+    <input type="button" value="1" id="main" onclick="a(1)">
+    <input type="button" value="2" id="main" onclick="a(2)">
+    <input type="button" value="3" id="main" onclick="a(3)">
+    <input type="button" value="4" id="main" onclick="a(4)">
+    <br>
+    <input type="button" value="5" id="main" onclick="a(5)">
+    <input type="button" value="6" id="main" onclick="a(6)">
+    <input type="button" value="7" id="main" onclick="a(7)">
+    <input type="button" value="8" id="main" onclick="a(8)"> 
+    <br>  
+    <input type="button" value="9" id="main" onclick="a(9)">
+    <input type="button" value="0" id="zero" onclick="a(0)">
+    <input type="button" value="." id="dot" onclick="a('.')">
+    </p>
+
+    <script>
+        function a(val){
+        document.getElementById("display").value += val;
+        }
+
+        function clr(val){
+        document.getElementById("display").value = val
+        }
+
+        function calc(){
+            try{ 
+                clr(eval(document.getElementById("display").value));
+            }
+            catch(calc){
+                clr("Error")
+            }
+        }
+        function del(){
+            var textF= display.value;
+            var textE= textF.slice(0,textF.length - 1 );
+            display.value=textE;
+            changeFontsize(display.value.length);
+        }
+        
+    </script>
 </body>
 </html>
+
